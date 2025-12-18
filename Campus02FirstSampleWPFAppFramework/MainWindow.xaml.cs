@@ -32,8 +32,16 @@ namespace Campus02FirstSampleWPFAppFramework
             pNeu.Bezeichnung = "Echt frischer Kaugummi";
             pNeu.Preis = 1.99;
             pNeu.Farbe = "Green";
+            pNeu.Eigenschaften = new List<string>() { "Frisch", "Klein", "Lecker" };
 
             this.DataContext= pNeu;
+        }
+
+        private void BeimOeffnenClick(object sender, RoutedEventArgs e)
+        {
+            LayoutSample meinFenster =new LayoutSample();
+            meinFenster.DataContext = this.DataContext;
+            meinFenster.ShowDialog();
         }
     }
 }

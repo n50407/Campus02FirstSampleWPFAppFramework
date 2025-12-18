@@ -32,6 +32,8 @@ namespace Campus02FirstSampleWPFAppFramework.Models
         public string Farbe { get; set; }
         public int Anzahl { get; set; }
 
+        public List<string> Eigenschaften { get; set; }
+
 
     }
 }

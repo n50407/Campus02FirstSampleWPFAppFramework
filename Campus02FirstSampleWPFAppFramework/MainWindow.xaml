@@ -7,18 +7,19 @@
         mc:Ignorable="d"
         Title="Mein Hello World" Height="750" Width="800">
     <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" >
+            <TextBlock>Ich bin momentan Offline</TextBlock>
+        </StatusBar>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
         <Menu DockPanel.Dock="Top" >
-            <MenuItem Header="Datei">
-                <MenuItem Header="Öffnen"/>
+            <MenuItem Header="Datei" Click="BeimOeffnenClick">
+                <MenuItem Header="Öffnen" />
                 <MenuItem Header="Speichern"/>
                 <Separator/>
                 <MenuItem Header="Beenden"/>
             </MenuItem>
         </Menu>
-        <StatusBar >
-            <TextBlock>Ich bin momentan Offline</TextBlock>
-        </StatusBar>
+       
         </StackPanel>
         <Menu DockPanel.Dock="Bottom" >
             <MenuItem Header="Datei">
@@ -54,7 +55,15 @@
             <Button>Hello Button 2</Button>
             <Image Source="/flowers-19830_1280.jpg" />
         </StackPanel>
-    </StackPanel>
-       
+   
+        <UniformGrid Rows="2" Columns="3">
+            <TextBlock Text="TextBlock 1" Background="LightBlue" />
+            <Button Content="Button 1" Background="LightCoral" />
+            <CheckBox Content="CheckBox 1" Background="LightGreen" />
+                <TextBlock Text="TextBlock 2" Background="LightYellow" />
+
+            </UniformGrid>
+        </StackPanel>
+
     </DockPanel>
 </Window>
