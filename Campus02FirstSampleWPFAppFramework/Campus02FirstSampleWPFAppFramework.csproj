@@ -58,10 +58,14 @@
     <Compile Include="LayoutSample.xaml.cs">
       <DependentUpon>LayoutSample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Produkt.cs" />
     <Compile Include="Unueblich.cs" />
     <Compile Include="Views\HelloWeekendWindow.xaml.cs">
       <DependentUpon>HelloWeekendWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
     <Page Include="LayoutSample.xaml">
       <SubType>Designer</SubType>
@@ -80,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\HelloWeekendWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PersonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,6 +120,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="flowers-19830_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Happy.jpg" />
+    <Resource Include="Views\Unhappy.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,7 @@
             <MenuItem Header="Datei" Click="BeimOeffnenClick">
                 <MenuItem Header="Öffnen" />
                     <MenuItem Header="HelloWeekend" Click="MenuItem_Click" />
+                    <MenuItem Header="Person" Click="Person_Click" />
                     <MenuItem Header="Speichern"/>
                 <Separator/>
                 <MenuItem Header="Beenden"/>
