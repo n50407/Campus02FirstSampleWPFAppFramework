@@ -9,7 +9,7 @@
     <DockPanel>
     <StackPanel DockPanel.Dock="Left">
     <WrapPanel>
-        <Button>Hello World</Button>
+        <Button Background="{StaticResource myYellowBrush}" >Hello World</Button>
         <CheckBox>Check Me</CheckBox>
     </WrapPanel>
     <Grid>

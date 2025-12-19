@@ -14,7 +14,8 @@
         <Menu DockPanel.Dock="Top" >
             <MenuItem Header="Datei" Click="BeimOeffnenClick">
                 <MenuItem Header="Öffnen" />
-                <MenuItem Header="Speichern"/>
+                    <MenuItem Header="HelloWeekend" Click="MenuItem_Click" />
+                    <MenuItem Header="Speichern"/>
                 <Separator/>
                 <MenuItem Header="Beenden"/>
             </MenuItem>

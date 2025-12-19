@@ -1,0 +1,201 @@
+﻿<Window x:Class="Campus02FirstSampleWPFAppFramework.Views.HelloWeekendWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Campus02FirstSampleWPFAppFramework.Views"
+        mc:Ignorable="d"
+        Title="HelloWeekendWindow" Height="450" Width="800">
+    <Window.Resources>
+        <SolidColorBrush x:Key="blueBrush" Color="Yellow"/>
+        <SolidColorBrush x:Key="whiteBrush" Color="White"/>
+        <!-- Campus02 Farben -->
+        <Color x:Key="Campus02Yellow">#FFCC00</Color>
+        <Color x:Key="Campus02Black">#000000</Color>
+        <Color x:Key="Campus02YellowHover">#FFD633</Color>
+        <Color x:Key="Campus02YellowPressed">#E6B800</Color>
+
+        <!-- Campus02 Button Style -->
+        <Style x:Key="Campus02ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{StaticResource Campus02Yellow}"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Hover Effekt -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                      Storyboard.TargetProperty="Background.Color"
+                                                      To="{StaticResource Campus02YellowHover}"
+                                                      Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                      Storyboard.TargetProperty="Background.Color"
+                                                      To="{StaticResource Campus02Yellow}"
+                                                      Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+                            <!-- Pressed Effekt -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="{StaticResource Campus02YellowPressed}"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <!-- Disabled State -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                                <Setter Property="Cursor" Value="Arrow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Alternative: Campus02 Outline Button Style -->
+        <Style x:Key="Campus02OutlineButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="{StaticResource Campus02Yellow}"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="{StaticResource Campus02YellowPressed}"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <StackPanel x:Name="MyTopStackPanelFreitag">
+        <Button Style="{StaticResource Campus02ButtonStyle}" 
+        Content="CAMPUS 02 BUTTON" 
+        Width="200" 
+        Height="45"/>
+
+        <!-- Outline Variante -->
+        <Button Style="{StaticResource Campus02OutlineButtonStyle}" 
+        Content="MEHR ERFAHREN" 
+        Width="200" 
+        Height="45"/>
+
+        <!-- Mit Icon -->
+        <Button Style="{StaticResource Campus02ButtonStyle}" 
+        Width="250" 
+        Height="50">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="▶" Margin="0,0,10,0" FontSize="16"/>
+                <TextBlock Text="JETZT BEWERBEN" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button Background="{StaticResource blueBrush}">Mein Blauer Button</Button>
+        <Ellipse Width="200" Height="100" Fill="LightBlue" Stroke="DarkBlue" StrokeThickness="5" />
+        <GroupBox Header="Wählen Sie eine Form">
+            <StackPanel>
+                <Button Content="My Custom Gradient Brush">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            
+                            <GradientStop Color="#FF1A5F20" Offset="0.452"/>
+                            <GradientStop Color="#FFB480B9" Offset="0.604"/>
+                            <GradientStop Color="#FFB480B9" Offset="0.675"/>
+                            <GradientStop Color="#FF643569" Offset="0.827"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    
+                </Button>
+                <RadioButton FontFamily="Arial" Background="AliceBlue" Content="Kreis"></RadioButton>
+                <RadioButton Content="Rechteck"></RadioButton>
+                
+                <RadioButton>
+                    <RadioButton.Content>
+                        <StackPanel>
+                            <Rectangle Width="50" Height="30" Fill="LightGreen" Stroke="DarkGreen" StrokeThickness="2" />
+                            <Expander Header="Demo">
+                                
+                            </Expander>
+                        </StackPanel>
+                    </RadioButton.Content>
+                </RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <ToggleButton Content="Wochenendmodus"></ToggleButton>
+        <ComboBox>
+            <ComboBox.Items>
+                <Button>Montag</Button>
+                <CheckBox>Dienstag</CheckBox>
+            </ComboBox.Items>
+        </ComboBox>
+    </StackPanel>
+</Window>

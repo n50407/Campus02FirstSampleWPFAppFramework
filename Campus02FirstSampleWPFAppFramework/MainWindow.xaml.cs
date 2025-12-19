@@ -1,4 +1,5 @@
 ﻿using Campus02FirstSampleWPFAppFramework.Models;
+using Campus02FirstSampleWPFAppFramework.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,12 @@ namespace Campus02FirstSampleWPFAppFramework
         {
             LayoutSample meinFenster =new LayoutSample();
             meinFenster.DataContext = this.DataContext;
+            meinFenster.ShowDialog();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            HelloWeekendWindow meinFenster = new HelloWeekendWindow();
             meinFenster.ShowDialog();
         }
     }

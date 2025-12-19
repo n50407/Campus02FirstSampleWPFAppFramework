@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Campus02FirstSampleWPFAppFramework"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="myYellowBrush" Color="Yellow"/>
     </Application.Resources>
 </Application>
