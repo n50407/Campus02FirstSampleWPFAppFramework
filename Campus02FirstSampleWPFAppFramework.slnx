@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Campus02FirstSampleWPFAppFramework/Campus02FirstSampleWPFAppFramework.csproj" Id="9febd57a-2122-45d9-99ce-f67957bc86d9" />
+  <Project Path="ConsoleAppDelegatesEvents/ConsoleAppDelegatesEvents.csproj" Id="e04fe23e-843f-4bdf-a8d7-fe96f84deb91" />
   <Project Path="MyBusinessLogikDLL/MyBusinessLogikDLL.csproj" Id="de5afd1e-6f8e-4296-a2f5-28a126c436ea" />
 </Solution>

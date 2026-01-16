@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Campus02FirstSampleWPFAppFramework.Models
 {
     //PoCo // POJO
     public class Produkt
     {
+        public ICommand MyCommand { get; }
+
+        public Produkt()
+        {
+                MyCommand = new Commands.SayHelloCommand();
+        }
+
         private int _produktId;
         public int ProduktId
         {

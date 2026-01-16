@@ -12,14 +12,15 @@
         </StatusBar>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
         <Menu DockPanel.Dock="Top" >
-            <MenuItem Header="Datei" Click="BeimOeffnenClick">
+            <MenuItem Header="Datei">
                 <MenuItem Header="Öffnen" />
                     <MenuItem Header="HelloWeekend" Click="MenuItem_Click" />
                     <MenuItem Header="Person" Click="Person_Click" />
                     <MenuItem Header="Speichern"/>
                 <Separator/>
                 <MenuItem Header="Beenden"/>
-            </MenuItem>
+                    <MenuItem Header="Command Beispiel" Command="{Binding MyCommand}" ></MenuItem>
+                </MenuItem>
         </Menu>
        
         </StackPanel>
@@ -29,6 +30,7 @@
                 <MenuItem Header="Speichern"/>
                 <Separator/>
                 <MenuItem Header="Beenden"/>
+                
             </MenuItem>
         </Menu>
         <StackPanel Background="{Binding Farbe}">

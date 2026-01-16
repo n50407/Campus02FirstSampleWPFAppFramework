@@ -29,6 +29,7 @@ namespace Campus02FirstSampleWPFAppFramework
             MessageBox.Show(GetHelloMessage());
             Produkt pNeu = new Produkt();
             pNeu.ProduktId = 42; //setProductId(42) -->Set
+           
             pNeu.ProduktName = "Kaugummi";
             pNeu.Bezeichnung = "Echt frischer Kaugummi";
             pNeu.Preis = 1.99;
@@ -36,6 +37,7 @@ namespace Campus02FirstSampleWPFAppFramework
             pNeu.Eigenschaften = new List<string>() { "Frisch", "Klein", "Lecker" };
 
             this.DataContext= pNeu;
+            
         }
 
         private void BeimOeffnenClick(object sender, RoutedEventArgs e)
@@ -43,6 +45,7 @@ namespace Campus02FirstSampleWPFAppFramework
             LayoutSample meinFenster =new LayoutSample();
             meinFenster.DataContext = this.DataContext;
             meinFenster.ShowDialog();
+            
         }
             private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
