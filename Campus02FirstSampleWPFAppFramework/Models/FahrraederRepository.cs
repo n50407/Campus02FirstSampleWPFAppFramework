@@ -10,6 +10,7 @@ namespace Campus02FirstSampleWPFAppFramework.Models
 {
     public class FahrraederRepository: INotifyPropertyChanged
     {
+        private FahrradContext _context =new FahrradContext();
         public ObservableCollection<Fahrrad> MeineFahrraeder { get; set; }
         public FahrraederRepository()
         {
@@ -18,16 +19,28 @@ namespace Campus02FirstSampleWPFAppFramework.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public void ReadAll()
+        {
+            var fList = _context.Fahrraeder.ToList();
+            foreach (var f in fList)
+            {
+                MeineFahrraeder.Add(f);
+            }
+        }
         public void AddFahrrad(Fahrrad fahrrad)
         {
             MeineFahrraeder.Add(fahrrad);
             HelperPropertyChange("AnzahlFahrraeder");
+            _context.Fahrraeder.Add(fahrrad);
+            _context.SaveChanges();
         }
         public void RemoveFahrrad(int id)
         {
             var fahrradToRemove = MeineFahrraeder.Where(f => f.FahrradId == id).FirstOrDefault();
             MeineFahrraeder.Remove(fahrradToRemove);
             HelperPropertyChange("AnzahlFahrraeder");
+            _context.Fahrraeder.Remove(fahrradToRemove);
+            _context.SaveChanges();
         }
 
         public void HelperPropertyChange(string properName)

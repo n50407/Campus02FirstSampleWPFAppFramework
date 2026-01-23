@@ -70,6 +70,7 @@
       <DependentUpon>LayoutSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Fahrrad.cs" />
+    <Compile Include="Models\FahrradContext.cs" />
     <Compile Include="Models\FahrraederRepository.cs" />
     <Compile Include="Models\LV.cs" />
     <Compile Include="Models\LVDBContext.cs" />

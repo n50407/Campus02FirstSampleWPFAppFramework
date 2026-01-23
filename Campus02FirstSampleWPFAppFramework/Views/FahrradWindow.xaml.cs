@@ -24,15 +24,16 @@ namespace Campus02FirstSampleWPFAppFramework.Views
         {
             InitializeComponent();
             FahrraederRepository rep = new FahrraederRepository();
-            
-            rep.MeineFahrraeder.Add(new Fahrrad()
+
+            /*
+            rep.AddFahrrad(new Fahrrad()
             {
                 Bezeichnung = "Scotty",
                 FahrradId = 1,
                 Kategorie = "Fully Mountainbike",
                 Abbildung = "Scotty.jpg",
             });
-            rep.MeineFahrraeder.Add(
+            rep.AddFahrrad(
             new Fahrrad()
             {
                 Bezeichnung = "Emilia",
@@ -41,8 +42,26 @@ namespace Campus02FirstSampleWPFAppFramework.Views
                 Abbildung = "City.jpg",
             }
             );
+            */
+            rep.ReadAll();
             rep.AusgewF = rep.MeineFahrraeder[0];
             this.DataContext = rep;
+
+            var v1 = rep.MeineFahrraeder.
+                Where(f => f.Bezeichnung.Contains("e")).
+                OrderBy(f => f.Abbildung).
+                ToList();
+
+            //"select x from meineKunden"
+            //LINQ
+            var v2 = from fx in rep.MeineFahrraeder
+                     where fx.Bezeichnung.Contains("e")
+                     orderby fx.Kategorie
+                     select fx; //select * 
+
+
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
