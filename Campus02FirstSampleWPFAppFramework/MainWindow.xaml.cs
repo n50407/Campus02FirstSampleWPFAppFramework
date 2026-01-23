@@ -57,5 +57,17 @@ namespace Campus02FirstSampleWPFAppFramework
             PersonView meinFenster = new PersonView();
             meinFenster.ShowDialog();
         }
+
+        private void Bike_Click(object sender, RoutedEventArgs e)
+        {
+            FahrradWindow window = new FahrradWindow();
+            window.ShowDialog();
+        }
+
+        private void LV_Click(object sender, RoutedEventArgs e)
+        {
+            LVWindow meinFenster = new LVWindow();
+            meinFenster.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,15 @@
+﻿<Window x:Class="Campus02FirstSampleWPFAppFramework.Views.LVWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Campus02FirstSampleWPFAppFramework.Views"
+        mc:Ignorable="d"
+        Title="LVWindow" Height="450" Width="800">
+    <StackPanel>
+        <ListBox ItemsSource="{Binding MeineLVs}" DisplayMemberPath="Bezeichnung" SelectedItem="{Binding SelectedLV}"></ListBox>
+        <TextBlock Text="{Binding SelectedLV.Bezeichnung}" FontSize="20" FontWeight="Bold" />
+
+
+    </StackPanel>
+</Window>

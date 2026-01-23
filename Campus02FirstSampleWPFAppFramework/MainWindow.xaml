@@ -17,7 +17,9 @@
                     <MenuItem Header="HelloWeekend" Click="MenuItem_Click" />
                     <MenuItem Header="Person" Click="Person_Click" />
                     <MenuItem Header="Speichern"/>
-                <Separator/>
+                    <MenuItem Header="LV" Click="LV_Click" />
+                    <MenuItem Header="bikes" Click="Bike_Click" />
+                    <Separator/>
                 <MenuItem Header="Beenden"/>
                     <MenuItem Header="Command Beispiel" Command="{Binding MyCommand}" ></MenuItem>
                 </MenuItem>

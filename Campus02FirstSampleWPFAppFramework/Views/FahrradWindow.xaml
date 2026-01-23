@@ -1,0 +1,41 @@
+﻿<Window x:Class="Campus02FirstSampleWPFAppFramework.Views.FahrradWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Campus02FirstSampleWPFAppFramework.Views"
+        mc:Ignorable="d"
+        Title="FahrradWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem Content="{Binding AnzahlFahrraeder}"></StatusBarItem>
+        </StatusBar>
+        <ListBox DockPanel.Dock="Left" ItemsSource="{Binding MeineFahrraeder}"
+                 SelectedItem="{Binding AusgewF}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Bezeichnung}"/>
+                        <TextBlock Text="{Binding Kategorie}">                        
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel>
+            <TextBlock Text="{Binding AusgewF.Bezeichnung}"></TextBlock>
+            <Image Source="{Binding AusgewF.Abbildung}"/>
+            <GroupBox Header="neues Fahrrad">
+                <StackPanel>
+                    <TextBox Text="{Binding NeueBezeichnung}"></TextBox>
+                    <TextBox Text="{Binding NeueKategorie}"></TextBox>
+                    <Button Click="Button_Click"></Button>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+       
+    </DockPanel>
+</Window>
