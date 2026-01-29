@@ -77,6 +77,7 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Produkt.cs" />
     <Compile Include="Unueblich.cs" />
+    <Compile Include="ViewModels\FahrradViewModel.cs" />
     <Compile Include="ViewModels\LVViewModel.cs" />
     <Compile Include="Views\FahrradWindow.xaml.cs">
       <DependentUpon>FahrradWindow.xaml</DependentUpon>

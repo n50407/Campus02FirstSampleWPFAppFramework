@@ -19,13 +19,14 @@ namespace Campus02FirstSampleWPFAppFramework.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void ReadAll()
+        public ObservableCollection<Fahrrad> ReadAll()
         {
             var fList = _context.Fahrraeder.ToList();
             foreach (var f in fList)
             {
                 MeineFahrraeder.Add(f);
             }
+            return MeineFahrraeder;
         }
         public void AddFahrrad(Fahrrad fahrrad)
         {

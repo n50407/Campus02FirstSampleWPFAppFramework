@@ -1,4 +1,5 @@
 ﻿using Campus02FirstSampleWPFAppFramework.Models;
+using Campus02FirstSampleWPFAppFramework.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,7 @@ namespace Campus02FirstSampleWPFAppFramework.Views
             }
             );
             */
+            /*
             rep.ReadAll();
             rep.AusgewF = rep.MeineFahrraeder[0];
             this.DataContext = rep;
@@ -59,6 +61,11 @@ namespace Campus02FirstSampleWPFAppFramework.Views
                      orderby fx.Kategorie
                      select fx; //select * 
 
+            */
+
+            FahrradViewModel viewModel = new FahrradViewModel();
+            viewModel.ReadAll();
+            this.DataContext = viewModel;
 
 
 
@@ -73,6 +80,18 @@ namespace Campus02FirstSampleWPFAppFramework.Views
                 Kategorie=rep.NeueKategorie
             };
             rep.AddFahrrad(f);
+        }
+
+        private void Dummy_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void Suchen_Click(object sender, RoutedEventArgs e)
+        {
+            FahrradViewModel viewModel = this.DataContext as FahrradViewModel;
+            viewModel.Suchen();
+
         }
     }
 }

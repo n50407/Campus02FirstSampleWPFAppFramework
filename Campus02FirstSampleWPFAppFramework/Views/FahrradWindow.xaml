@@ -13,8 +13,17 @@
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem Content="{Binding AnzahlFahrraeder}"></StatusBarItem>
         </StatusBar>
-        <ListBox DockPanel.Dock="Left" ItemsSource="{Binding MeineFahrraeder}"
+        <StackPanel DockPanel.Dock="Left" >
+        <ListBox ItemsSource="{Binding MeineFahrraeder}"
                  SelectedItem="{Binding AusgewF}">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Kopieren" Click="Dummy_Click"/>
+                    <MenuItem Header="Ausschneiden" Click="Dummy_Click"/>
+                    <Separator/>
+                    <MenuItem Header="Einfügen" Click="Dummy_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -25,6 +34,24 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+            <StackPanel>
+                <TextBlock>Suchen</TextBlock>
+                <TextBox Text="{Binding Suchtext}"/>
+                <Button Click="Suchen_Click" >Suchen</Button>
+            </StackPanel>
+            <ListBox ItemsSource="{Binding MeineFahrraederFiltered}"
+           SelectedItem="{Binding AusgewF}">             
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Bezeichnung}"/>
+                            <TextBlock Text="{Binding Kategorie}">
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
         <StackPanel>
             <TextBlock Text="{Binding AusgewF.Bezeichnung}"></TextBlock>
             <Image Source="{Binding AusgewF.Abbildung}"/>
@@ -32,7 +59,7 @@
                 <StackPanel>
                     <TextBox Text="{Binding NeueBezeichnung}"></TextBox>
                     <TextBox Text="{Binding NeueKategorie}"></TextBox>
-                    <Button Click="Button_Click"></Button>
+                    <Button Click="Button_Click">Bike hinzufügen</Button>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
